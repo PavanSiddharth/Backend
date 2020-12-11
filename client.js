@@ -23,8 +23,8 @@ app.use(fileUpload());
 
 
 
-app.listen(3001, () =>
-  console.log('Express server is running on localhost:3001')
+app.listen(8080, () =>
+  console.log('Express server is running on localhost:8080')
 );
 
   const con = mysql.createConnection({
@@ -101,7 +101,7 @@ app.post('/upload',(req, res) => {
         });
 
 
-async function myfun() {
+/*async function myfun() {
 
   var s3 = new AWS.S3({
     accessKeyId: "AKIAQC3RSOMX32RZBBOO",
@@ -117,7 +117,7 @@ s3.getObject({Bucket: 'lessonfiles', Key: 'lesson1.txt'}).promise().then((data) 
 }).catch((err) => {
   throw err
 })
-}
+}*/
 
 //myfun();
 

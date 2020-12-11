@@ -1,12 +1,12 @@
 branch-defaults:
   master:
-    environment: Backend-env
+    environment: Mybackend-env
 environment-defaults:
-  Backend-env:
+  Mybackend-env:
     branch: null
     repository: null
 global:
-  application_name: backend
+  application_name: MyBackend
   default_ec2_keyname: null
   default_platform: Node.js 12 running on 64bit Amazon Linux 2
   default_region: ap-south-1
