@@ -1,7 +1,6 @@
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const AWS = require('aws-sdk');
-const util = require('util')
 const mysql = require('mysql');
 
 const express = require('express');
@@ -10,7 +9,6 @@ const pino = require('express-pino-logger')();
 const fileUpload = require('express-fileupload');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
-const fs = require('fs')
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -101,7 +99,7 @@ app.post('/upload',(req, res) => {
         });
 
 
-async function myfun() {
+/*async function myfun() {
 
   var s3 = new AWS.S3({
     accessKeyId: "AKIAQC3RSOMX32RZBBOO",
@@ -119,7 +117,7 @@ s3.getObject({Bucket: 'lessonfiles', Key: 'lesson1.txt'}).promise().then((data) 
 })
 }
 
-//myfun();
+//myfun();*/
 
 
 
