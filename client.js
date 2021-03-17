@@ -10,7 +10,7 @@ const con = mysql.createConnection({
   host: "database-1.cpehnlgbk0me.ap-south-1.rds.amazonaws.com",
   user: "admin",
   port: "3306",
-  password: "adminpassword",
+  password: "*",
   database: "lessons",
   queryTimeout: 6000,
   connectTimeout: 60000
@@ -37,7 +37,7 @@ app.post('/submit', (req, res) => {
 
             let s3 = new AWS.S3({
                 accessKeyId: "AKIAQC3RSOMX32RZBBOO",
-                secretAccessKey: "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",
+                secretAccessKey: "*",
                 Bucket: "lessonfiles",
               });
     
@@ -138,28 +138,7 @@ app.get('/test',(req, res) => {
   res.json({message: "Hello"})
 })
 
-/*app.post('/upload',(req, res) => {
-    console.log(req.files.file)
 
-            let s3 = new AWS.S3({
-                accessKeyId: "AKIAQC3RSOMX32RZBBOO",
-                secretAccessKey: "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",
-                Bucket: "lessonfiles",
-              });
-    
-            let params = {
-                Bucket: 'lessonfiles',
-                Key: req.files.file.name ,
-                Body: req.files.file.data
-            };
-            s3.upload(params, (err, result) => {
-                if(err) {
-                   console.log("Error", err);
-                } else {
-                   console.log("S3 Response",result);
-                }
-            })
-        });*/
 
 
     app.post('/download', (req, res) =>  {
@@ -168,7 +147,7 @@ app.get('/test',(req, res) => {
 
   var s3 = new AWS.S3({
     accessKeyId: "AKIAQC3RSOMX32RZBBOO",
-    secretAccessKey: "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"
+    secretAccessKey: "*"
   });
 
 //const writeFile = util.promisify(fs.writeFile)
@@ -189,7 +168,7 @@ s3.getObject({Bucket: 'lessonfiles', Key: req.body.lesson+".txt"}).promise().the
 app.get('/vocabulary',(req, res) => {
   var s3 = new AWS.S3({
     accessKeyId: "AKIAQC3RSOMX32RZBBOO",
-    secretAccessKey: "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"
+    secretAccessKey: "*"
   });
   con.connect(function(err) {
     con.query(`SELECT * FROM details`, function(err, result, fields) {
